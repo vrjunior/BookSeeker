@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E139DA3E9B07C758629FBE39 /* Pods_BookSeeker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468732FD1A680DA9F67B9068 /* Pods_BookSeeker.framework */; };
 		F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EA24623A1D7300094FE42 /* AppDelegate.swift */; };
 		F73EA25023A1D7310094FE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73EA24F23A1D7310094FE42 /* Assets.xcassets */; };
 		F73EA25323A1D7310094FE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73EA25123A1D7310094FE42 /* LaunchScreen.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		468732FD1A680DA9F67B9068 /* Pods_BookSeeker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSeeker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		890C4169A7DFF41D2EA4B6C0 /* Pods-BookSeeker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.debug.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.debug.xcconfig"; sourceTree = "<group>"; };
 		F73EA24323A1D7300094FE42 /* BookSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73EA24623A1D7300094FE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73EA24F23A1D7310094FE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		F74B9DD623A315D100023FB9 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		F74B9DD823A317C000023FB9 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
+		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E139DA3E9B07C758629FBE39 /* Pods_BookSeeker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5DC310AFABC301FD84A8038 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				890C4169A7DFF41D2EA4B6C0 /* Pods-BookSeeker.debug.xcconfig */,
+				FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D14EB7D3AEB83D0E3C81C67C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				468732FD1A680DA9F67B9068 /* Pods_BookSeeker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F73EA23A23A1D7300094FE42 = {
 			isa = PBXGroup;
 			children = (
 				F73EA24523A1D7300094FE42 /* BookSeeker */,
 				F73EA24423A1D7300094FE42 /* Products */,
+				A5DC310AFABC301FD84A8038 /* Pods */,
+				D14EB7D3AEB83D0E3C81C67C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F73EA25723A1D7310094FE42 /* Build configuration list for PBXNativeTarget "BookSeeker" */;
 			buildPhases = (
+				711684FD8B1CDDCEDE3E7508 /* [CP] Check Pods Manifest.lock */,
 				F73EA23F23A1D7300094FE42 /* Sources */,
 				F73EA24023A1D7300094FE42 /* Frameworks */,
 				F73EA24123A1D7300094FE42 /* Resources */,
+				99287C346B1E2B97300661FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		711684FD8B1CDDCEDE3E7508 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookSeeker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99287C346B1E2B97300661FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSeeker/Pods-BookSeeker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSeeker/Pods-BookSeeker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookSeeker/Pods-BookSeeker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F73EA23F23A1D7300094FE42 /* Sources */ = {
@@ -306,6 +375,7 @@
 		};
 		F73EA25823A1D7310094FE42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890C4169A7DFF41D2EA4B6C0 /* Pods-BookSeeker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +394,7 @@
 		};
 		F73EA25923A1D7310094FE42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

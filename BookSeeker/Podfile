@@ -6,5 +6,9 @@ target 'BookSeeker' do
   use_frameworks!
 
   # Pods for BookSeeker
-
+  pod 'Cartography', '4.0'
+  pod 'SwiftGen', '6.1'
+  pod 'SwiftLint'
+  pod 'Kingfisher', '5.11.0'
+  pod 'Alamofire', '4.9.1'
 end
