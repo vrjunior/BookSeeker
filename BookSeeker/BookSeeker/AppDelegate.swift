@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindowAndRootView() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let searchViewController = SearchConfigurator().createScene()
-        window?.rootViewController = searchViewController
+        let navigationController = CustomNavigationController(rootViewController: searchViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }

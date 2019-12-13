@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		F74B9DD723A315D100023FB9 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DD623A315D100023FB9 /* CodeView.swift */; };
 		F74B9DD923A317C000023FB9 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DD823A317C000023FB9 /* SearchInteractor.swift */; };
 		F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */; };
+		F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A223A31F50005CF1B6 /* Margin.swift */; };
+		F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		F74B9DD623A315D100023FB9 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		F74B9DD823A317C000023FB9 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
+		F797A1A223A31F50005CF1B6 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
+		F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +60,6 @@
 				890C4169A7DFF41D2EA4B6C0 /* Pods-BookSeeker.debug.xcconfig */,
 				FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +92,7 @@
 		F73EA24523A1D7300094FE42 /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				F797A1A123A31F42005CF1B6 /* UI */,
 				F74B9DD523A315BE00023FB9 /* Protocols */,
 				F74B9DCB23A3129700023FB9 /* Search */,
 				F73EA24623A1D7300094FE42 /* AppDelegate.swift */,
@@ -118,6 +122,15 @@
 				F74B9DD623A315D100023FB9 /* CodeView.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F797A1A123A31F42005CF1B6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F797A1A223A31F50005CF1B6 /* Margin.swift */,
+				F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +249,11 @@
 			files = (
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,
 				F74B9DD323A312B400023FB9 /* SearchModels.swift in Sources */,
+				F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */,
 				F74B9DD123A312B400023FB9 /* SearchViewController.swift in Sources */,
 				F74B9DD023A312B400023FB9 /* SearchView.swift in Sources */,
 				F74B9DD923A317C000023FB9 /* SearchInteractor.swift in Sources */,
+				F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */,
 				F74B9DD223A312B400023FB9 /* SearchPresenter.swift in Sources */,
 				F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */,
 				F74B9DD723A315D100023FB9 /* CodeView.swift in Sources */,

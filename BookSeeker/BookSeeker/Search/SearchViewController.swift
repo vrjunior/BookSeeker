@@ -16,6 +16,12 @@ final class SearchViewController: UIViewController {
         self.customView = customView
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
+        customView.delegate = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Busca"
     }
     
     @available(*, unavailable)
@@ -32,4 +38,23 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController: SearchDisplayLogic {
     
+}
+
+// MARK: - SearchViewDelegate
+
+extension SearchViewController: SearchViewDelegate {
+    
+    func didTapOnCancelSearchButton() {
+        customView.setCancelButton(isVisible: false)
+        customView.endEditing(true)
+    }
+    
+    func didTapOnSearchButton() {
+        customView.setCancelButton(isVisible: false)
+        customView.endEditing(true)
+    }
+
+    func didBeginEditingSearchBar() {
+        customView.setCancelButton(isVisible: true)
+    }
 }
