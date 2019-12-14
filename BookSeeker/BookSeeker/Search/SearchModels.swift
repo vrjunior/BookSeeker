@@ -11,12 +11,10 @@ struct SearchModels {
         
         enum Success {
             struct Response {
-                let booksCount: Int
                 let books: [Book]
             }
             
             struct ViewModel {
-                let booksCount: Int
                 let books: [Book]
             }
         }

@@ -18,6 +18,13 @@
 		F74B9DD723A315D100023FB9 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DD623A315D100023FB9 /* CodeView.swift */; };
 		F74B9DD923A317C000023FB9 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DD823A317C000023FB9 /* SearchInteractor.swift */; };
 		F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */; };
+		F783F5DD23A596AB009E3D1E /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783F5DC23A596AB009E3D1E /* BookSearch.swift */; };
+		F783F5E023A596C5009E3D1E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783F5DF23A596C5009E3D1E /* NetworkRequest.swift */; };
+		F79273F323A5988F003CF2AE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F223A5988F003CF2AE /* Network.swift */; };
+		F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F423A5A20E003CF2AE /* NetworkError.swift */; };
+		F79273F823A5A260003CF2AE /* BookSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F723A5A260003CF2AE /* BookSearchRequest.swift */; };
+		F79273FB23A5A504003CF2AE /* SearchBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273FA23A5A504003CF2AE /* SearchBookResponse.swift */; };
+		F79273FD23A5A543003CF2AE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273FC23A5A543003CF2AE /* Book.swift */; };
 		F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A223A31F50005CF1B6 /* Margin.swift */; };
 		F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +44,13 @@
 		F74B9DD623A315D100023FB9 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		F74B9DD823A317C000023FB9 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
+		F783F5DC23A596AB009E3D1E /* BookSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearch.swift; sourceTree = "<group>"; };
+		F783F5DF23A596C5009E3D1E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F79273F223A5988F003CF2AE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F79273F423A5A20E003CF2AE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F79273F723A5A260003CF2AE /* BookSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRequest.swift; sourceTree = "<group>"; };
+		F79273FA23A5A504003CF2AE /* SearchBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResponse.swift; sourceTree = "<group>"; };
+		F79273FC23A5A543003CF2AE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F797A1A223A31F50005CF1B6 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +106,7 @@
 		F73EA24523A1D7300094FE42 /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				F783F5DE23A596B5009E3D1E /* Network */,
 				F797A1A123A31F42005CF1B6 /* UI */,
 				F74B9DD523A315BE00023FB9 /* Protocols */,
 				F74B9DCB23A3129700023FB9 /* Search */,
@@ -112,6 +127,7 @@
 				F74B9DCD23A312B400023FB9 /* SearchViewController.swift */,
 				F74B9DD823A317C000023FB9 /* SearchInteractor.swift */,
 				F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */,
+				F783F5DC23A596AB009E3D1E /* BookSearch.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -122,6 +138,35 @@
 				F74B9DD623A315D100023FB9 /* CodeView.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F783F5DE23A596B5009E3D1E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F79273F923A5A4EB003CF2AE /* Entities */,
+				F79273F623A5A221003CF2AE /* ItunesRequests */,
+				F783F5DF23A596C5009E3D1E /* NetworkRequest.swift */,
+				F79273F223A5988F003CF2AE /* Network.swift */,
+				F79273F423A5A20E003CF2AE /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F79273F623A5A221003CF2AE /* ItunesRequests */ = {
+			isa = PBXGroup;
+			children = (
+				F79273F723A5A260003CF2AE /* BookSearchRequest.swift */,
+			);
+			path = ItunesRequests;
+			sourceTree = "<group>";
+		};
+		F79273F923A5A4EB003CF2AE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F79273FA23A5A504003CF2AE /* SearchBookResponse.swift */,
+				F79273FC23A5A543003CF2AE /* Book.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		F797A1A123A31F42005CF1B6 /* UI */ = {
@@ -247,7 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79273F323A5988F003CF2AE /* Network.swift in Sources */,
+				F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */,
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,
+				F79273FB23A5A504003CF2AE /* SearchBookResponse.swift in Sources */,
+				F783F5E023A596C5009E3D1E /* NetworkRequest.swift in Sources */,
 				F74B9DD323A312B400023FB9 /* SearchModels.swift in Sources */,
 				F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */,
 				F74B9DD123A312B400023FB9 /* SearchViewController.swift in Sources */,
@@ -257,6 +306,9 @@
 				F74B9DD223A312B400023FB9 /* SearchPresenter.swift in Sources */,
 				F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */,
 				F74B9DD723A315D100023FB9 /* CodeView.swift in Sources */,
+				F79273F823A5A260003CF2AE /* BookSearchRequest.swift in Sources */,
+				F783F5DD23A596AB009E3D1E /* BookSearch.swift in Sources */,
+				F79273FD23A5A543003CF2AE /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
