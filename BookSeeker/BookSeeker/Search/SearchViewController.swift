@@ -52,6 +52,7 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController: SearchDisplayLogic {
     func displaySearchBookSucceed(viewModel: SearchModels.SearchBook.Success.ViewModel) {
+        customView.stopLoading()
         customView.booksToDisplay = viewModel.books
     }
     
@@ -78,6 +79,7 @@ extension SearchViewController: UISearchBarDelegate {
         guard let term = searchBar.text, !term.isEmpty else {
             return
         }
+        customView.startLoading()
         interactor.searchBook(request: .init(term: term))
     }
 }

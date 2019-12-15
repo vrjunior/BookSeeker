@@ -4,6 +4,9 @@ import UIKit
 protocol SearchInputLogic where Self: UIView {
     var booksToDisplay: [SearchModels.Book] { get set }
     var delegate: SearchViewDelegate? { get set }
+    
+    func startLoading()
+    func stopLoading()
 }
 
 protocol SearchViewDelegate: AnyObject {
@@ -22,7 +25,14 @@ final class SearchView: UIView {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 82
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
         return tableView
+    }()
+    
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = .black
+        return activityIndicator
     }()
     
     // MARK: - Properties
@@ -51,7 +61,22 @@ final class SearchView: UIView {
 // MARK: - SearchInputLogic
 
 extension SearchView: SearchInputLogic {
+    func startLoading() {
+        tableView.isHidden = true
+        addSubview(loadingIndicator)
+        constrain(loadingIndicator, self) { loading, superview in
+            loading.centerX == superview.centerX
+            loading.centerY == superview.centerY
+        }
+        
+        loadingIndicator.startAnimating()
+    }
     
+    func stopLoading() {
+        tableView.isHidden = false
+        loadingIndicator.stopAnimating()
+        loadingIndicator.removeFromSuperview()
+    }
 }
 
 // MARK: - CodeView
