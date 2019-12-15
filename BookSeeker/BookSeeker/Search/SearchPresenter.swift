@@ -11,10 +11,10 @@ final class SearchPresenter {
 
 extension SearchPresenter: SearchPresentationLogic {
     func presentSearchBookFailed(response: SearchModels.SearchBook.Failure.Response) {
-        
+
     }
     
     func presentSarchBookSucceed(response: SearchModels.SearchBook.Success.Response) {
-        
+        display?.displaySearchBookSucceed(viewModel: .init(books: response.books))
     }
 }

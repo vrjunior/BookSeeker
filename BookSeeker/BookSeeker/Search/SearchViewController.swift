@@ -1,13 +1,21 @@
 import UIKit
 
 protocol SearchDisplayLogic: AnyObject {
-    
+    func displaySearchBookSucceed(viewModel: SearchModels.SearchBook.Success.ViewModel)
+    func displaySearchBookFailed(viewModel: SearchModels.SearchBook.Failure.ViewModel)
 }
 
 final class SearchViewController: UIViewController {
     
     private let customView: SearchInputLogic
     private let interactor: SearchBusinessLogic
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        return searchController
+    }()
     
     init(
         customView: SearchInputLogic,
@@ -22,6 +30,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Busca"
+        setupSearchBar()
     }
     
     @available(*, unavailable)
@@ -32,29 +41,43 @@ final class SearchViewController: UIViewController {
     override func loadView() {
         view = customView
     }
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
 }
 
 // MARK: - SearchDisplayLogic
 
 extension SearchViewController: SearchDisplayLogic {
+    func displaySearchBookSucceed(viewModel: SearchModels.SearchBook.Success.ViewModel) {
+        customView.booksToDisplay = viewModel.books
+    }
     
+    func displaySearchBookFailed(viewModel: SearchModels.SearchBook.Failure.ViewModel) {
+        
+    }
 }
 
 // MARK: - SearchViewDelegate
 
 extension SearchViewController: SearchViewDelegate {
-    
-    func didTapOnCancelSearchButton() {
-        customView.setCancelButton(isVisible: false)
-        customView.endEditing(true)
+    func didSelectBook(atIndex: Int) {
     }
-    
-    func didTapOnSearchButton() {
-        customView.setCancelButton(isVisible: false)
-        customView.endEditing(true)
-    }
+}
 
-    func didBeginEditingSearchBar() {
-        customView.setCancelButton(isVisible: true)
+
+// MARK: - UISearchBarDelegate
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let term = searchBar.text, !term.isEmpty else {
+            return
+        }
+        interactor.searchBook(request: .init(term: term))
     }
 }

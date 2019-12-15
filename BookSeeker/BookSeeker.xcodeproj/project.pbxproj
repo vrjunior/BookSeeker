@@ -25,6 +25,8 @@
 		F79273F823A5A260003CF2AE /* BookSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F723A5A260003CF2AE /* BookSearchRequest.swift */; };
 		F79273FB23A5A504003CF2AE /* SearchBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273FA23A5A504003CF2AE /* SearchBookResponse.swift */; };
 		F79273FD23A5A543003CF2AE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273FC23A5A543003CF2AE /* Book.swift */; };
+		F792740023A6B8FF003CF2AE /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273FF23A6B8FF003CF2AE /* BookTableViewCell.swift */; };
+		F792740223A6BAEA003CF2AE /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F792740123A6BAEA003CF2AE /* Displayable.swift */; };
 		F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A223A31F50005CF1B6 /* Margin.swift */; };
 		F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		F79273F723A5A260003CF2AE /* BookSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRequest.swift; sourceTree = "<group>"; };
 		F79273FA23A5A504003CF2AE /* SearchBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookResponse.swift; sourceTree = "<group>"; };
 		F79273FC23A5A543003CF2AE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F79273FF23A6B8FF003CF2AE /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		F792740123A6BAEA003CF2AE /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		F797A1A223A31F50005CF1B6 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +125,9 @@
 		F74B9DCB23A3129700023FB9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F79273FE23A6B8E7003CF2AE /* View */,
 				F74B9DCF23A312B400023FB9 /* SearchModels.swift */,
 				F74B9DCE23A312B400023FB9 /* SearchPresenter.swift */,
-				F74B9DCC23A312B400023FB9 /* SearchView.swift */,
 				F74B9DCD23A312B400023FB9 /* SearchViewController.swift */,
 				F74B9DD823A317C000023FB9 /* SearchInteractor.swift */,
 				F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */,
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F74B9DD623A315D100023FB9 /* CodeView.swift */,
+				F792740123A6BAEA003CF2AE /* Displayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -167,6 +172,15 @@
 				F79273FC23A5A543003CF2AE /* Book.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		F79273FE23A6B8E7003CF2AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F74B9DCC23A312B400023FB9 /* SearchView.swift */,
+				F79273FF23A6B8FF003CF2AE /* BookTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F797A1A123A31F42005CF1B6 /* UI */ = {
@@ -296,6 +310,7 @@
 				F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */,
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,
 				F79273FB23A5A504003CF2AE /* SearchBookResponse.swift in Sources */,
+				F792740023A6B8FF003CF2AE /* BookTableViewCell.swift in Sources */,
 				F783F5E023A596C5009E3D1E /* NetworkRequest.swift in Sources */,
 				F74B9DD323A312B400023FB9 /* SearchModels.swift in Sources */,
 				F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */,
@@ -306,6 +321,7 @@
 				F74B9DD223A312B400023FB9 /* SearchPresenter.swift in Sources */,
 				F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */,
 				F74B9DD723A315D100023FB9 /* CodeView.swift in Sources */,
+				F792740223A6BAEA003CF2AE /* Displayable.swift in Sources */,
 				F79273F823A5A260003CF2AE /* BookSearchRequest.swift in Sources */,
 				F783F5DD23A596AB009E3D1E /* BookSearch.swift in Sources */,
 				F79273FD23A5A543003CF2AE /* Book.swift in Sources */,

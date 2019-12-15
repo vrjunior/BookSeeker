@@ -5,7 +5,7 @@ struct BookSearchRequest: ItunesRequest {
     
     let method: HTTPMethod = .get
     
-    let encoding: ParameterEncoding = JSONEncoding.default
+    let encoding: ParameterEncoding = URLEncoding.default
     
     var parameters: Parameters? {
         return [
