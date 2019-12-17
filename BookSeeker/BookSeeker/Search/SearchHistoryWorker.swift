@@ -16,8 +16,9 @@ final class SearchHistoryWorker {
 extension SearchHistoryWorker: SearchHistoryWorkerProtocol {
     func save(term: String) {
         var previousHistory = fetchHistory()
+        previousHistory.removeAll { $0.lowercased() == term.lowercased() }
         previousHistory.insert(term, at: 0)
-        dataStore.set(value: term, key: .searchHistory)
+        dataStore.set(value: previousHistory, key: .searchHistory)
     }
     
     func fetchHistory() -> [String] {

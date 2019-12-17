@@ -35,6 +35,7 @@
 		F7F8098023A85EB600E174A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7F8097F23A85EB600E174A8 /* Localizable.strings */; };
 		F7F8098523A860A400E174A8 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8098323A860A400E174A8 /* assets-images.swift */; };
 		F7F8098623A860A400E174A8 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8098423A860A400E174A8 /* strings.swift */; };
+		F7F8098A23A864AF00E174A8 /* HistoryTermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8098923A864AF00E174A8 /* HistoryTermTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		F7F8097F23A85EB600E174A8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F7F8098323A860A400E174A8 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
 		F7F8098423A860A400E174A8 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
+		F7F8098923A864AF00E174A8 /* HistoryTermTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTermTableViewCell.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 			children = (
 				F74B9DCC23A312B400023FB9 /* SearchView.swift */,
 				F79273FF23A6B8FF003CF2AE /* BookTableViewCell.swift */,
+				F7F8098923A864AF00E174A8 /* HistoryTermTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				F7F8097D23A85A8B00E174A8 /* UserDefaultsProvider.swift in Sources */,
 				F7F8097B23A8592400E174A8 /* UserDefaultsDataStore.swift in Sources */,
 				F7F8098623A860A400E174A8 /* strings.swift in Sources */,
+				F7F8098A23A864AF00E174A8 /* HistoryTermTableViewCell.swift in Sources */,
 				F79273F323A5988F003CF2AE /* Network.swift in Sources */,
 				F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */,
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,

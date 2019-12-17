@@ -82,16 +82,17 @@ extension SearchViewController: SearchDisplayLogic {
 extension SearchViewController: SearchViewDelegate {
     func didSelectBook(atIndex: Int) {
     }
+    
+    func didSelectHistoryTerm(term: String) {
+        searchController.searchBar.text = term
+        interactor.searchBook(request: .init(term: term))
+    }
 }
 
 
 // MARK: - UISearchBarDelegate
 
-extension SearchViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        handleSearchInput(searchBar.text)
-    }
-    
+extension SearchViewController: UISearchBarDelegate {    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         interactor.fetchHistory(request: .init())
     }

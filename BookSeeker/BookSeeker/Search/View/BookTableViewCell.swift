@@ -5,7 +5,7 @@ import UIKit
 final class BookTableViewCell: UITableViewCell {
     private let artworkImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -14,6 +14,12 @@ final class BookTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.numberOfLines = 0
         return label
+    }()
+    
+    private lazy var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
     }()
     
     var display: SearchModels.Book?
@@ -35,6 +41,7 @@ extension BookTableViewCell: CodeView {
     func setupViews() {
         contentView.addSubview(artworkImageView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(separatorView)
     }
     
     func setupConstraints() {
@@ -52,19 +59,20 @@ extension BookTableViewCell: CodeView {
             title.trailing == superview.trailing - Margin.normal
             title.bottom == image.bottom
         }
+        
+        constrain(separatorView, titleLabel, artworkImageView, contentView) { separator, title, image, superview in
+            
+            separator.leading == image.leading
+            separator.trailing == title.trailing
+            separator.bottom == superview.bottom
+            
+            separator.height == 1
+        }
     }
     
     func setupExtraConfiguration() {
-        contentView.layer.cornerRadius = 4.0
+        selectionStyle = .none
         contentView.backgroundColor = .white
-        setupShadow()
-    }
-    
-    private func setupShadow() {
-        contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        contentView.layer.shadowRadius = 4.0
-        contentView.layer.shadowColor = UIColor.black.withAlphaComponent(0.05).cgColor
-        contentView.layer.shadowOpacity = 1.0
     }
 }
 

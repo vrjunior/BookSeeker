@@ -11,6 +11,7 @@ protocol SearchInputLogic where Self: UIView {
 
 protocol SearchViewDelegate: AnyObject {
     func didSelectBook(atIndex: Int)
+    func didSelectHistoryTerm(term: String)
 }
 
 final class SearchView: UIView {
@@ -100,13 +101,30 @@ extension SearchView: CodeView {
     
     func setupExtraConfiguration() {
         backgroundColor = .white
-        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: String(describing: BookTableViewCell.self))
+        
+        tableView.register(
+            BookTableViewCell.self,
+            forCellReuseIdentifier: String(describing: BookTableViewCell.self)
+        )
+        tableView.register(
+            HistoryTermTableViewCell.self,
+            forCellReuseIdentifier: String(describing: HistoryTermTableViewCell.self)
+        )
     }
 }
 
 // MARK: - UITableViewDelegate
 
 extension SearchView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch displayContent {
+        case let .searchHistory(terms):
+            let term = terms[indexPath.row]
+            delegate?.didSelectHistoryTerm(term: term)
+        case .searchResults:
+            delegate?.didSelectBook(atIndex: indexPath.row)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -129,11 +147,18 @@ extension SearchView: UITableViewDataSource {
             let book = books[indexPath.row]
             return cellForSearchResult(with: book, tableView: tableView, indexPath: indexPath)
         }
-        
     }
     
     private func cellForSearchHistory(with term: String, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-       return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HistoryTermTableViewCell.self), for: indexPath)
+        
+        guard let termCell = cell as? HistoryTermTableViewCell else {
+            return cell
+        }
+        
+        termCell.configure(withDisplay: term)
+        
+        return termCell
     }
     
     private func cellForSearchResult(with book: SearchModels.Book, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
