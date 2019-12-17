@@ -12,6 +12,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum Localization {
 
+  internal enum GenericError {
+    internal enum LocalizedMessage {
+      /// Algo deu errado.
+      internal static let text = Localization.tr("Localizable", "GenericError.LocalizedMessage.Text")
+    }
+  }
+
   internal enum SearchViewController {
     internal enum SearchBar {
       /// Busque por livros

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E139DA3E9B07C758629FBE39 /* Pods_BookSeeker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468732FD1A680DA9F67B9068 /* Pods_BookSeeker.framework */; };
 		F70E3F6723A877C7008982FD /* SearchWorkerProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E3F6623A877C7008982FD /* SearchWorkerProtocolStub.swift */; };
+		F70E3F6923A87BB5008982FD /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E3F6823A87BB5008982FD /* PresentableError.swift */; };
 		F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EA24623A1D7300094FE42 /* AppDelegate.swift */; };
 		F73EA25023A1D7310094FE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73EA24F23A1D7310094FE42 /* Assets.xcassets */; };
 		F73EA25323A1D7310094FE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73EA25123A1D7310094FE42 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		468732FD1A680DA9F67B9068 /* Pods_BookSeeker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSeeker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890C4169A7DFF41D2EA4B6C0 /* Pods-BookSeeker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.debug.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.debug.xcconfig"; sourceTree = "<group>"; };
 		F70E3F6623A877C7008982FD /* SearchWorkerProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorkerProtocolStub.swift; sourceTree = "<group>"; };
+		F70E3F6823A87BB5008982FD /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		F73EA24323A1D7300094FE42 /* BookSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73EA24623A1D7300094FE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73EA24F23A1D7310094FE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				F74B9DD623A315D100023FB9 /* CodeView.swift */,
 				F792740123A6BAEA003CF2AE /* Displayable.swift */,
+				F70E3F6823A87BB5008982FD /* PresentableError.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				F74B9DD323A312B400023FB9 /* SearchModels.swift in Sources */,
 				F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */,
 				F74B9DD123A312B400023FB9 /* SearchViewController.swift in Sources */,
+				F70E3F6923A87BB5008982FD /* PresentableError.swift in Sources */,
 				F74B9DD023A312B400023FB9 /* SearchView.swift in Sources */,
 				F74B9DD923A317C000023FB9 /* SearchInteractor.swift in Sources */,
 				F7F8098523A860A400E174A8 /* assets-images.swift in Sources */,
