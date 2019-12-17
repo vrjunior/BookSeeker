@@ -9,7 +9,7 @@ protocol SearchDataStore {
 
 final class SearchInteractor {
     private let presenter: SearchPresentationLogic
-    private let network: NetworkProtocol
+    private let searchWorker: SearchWorkerProtocol
     private let historyWorker: SearchHistoryWorkerProtocol
     
     // MARK: - DataStore properties
@@ -19,11 +19,11 @@ final class SearchInteractor {
     init(
         presenter: SearchPresentationLogic,
         historyWorker: SearchHistoryWorkerProtocol,
-        network: NetworkProtocol = Network.shared
+        searchWorker: SearchWorkerProtocol
     ) {
         self.presenter = presenter
         self.historyWorker = historyWorker
-        self.network = network
+        self.searchWorker = searchWorker
     }
 }
 
@@ -38,8 +38,7 @@ extension SearchInteractor: SearchBusinessLogic {
         
         historyWorker.save(term: request.term)
         
-        let request = BookSearchRequest(term: request.term)
-        network.requestCodable(request, dateDecodingStrategy: .iso8601) { [weak self] (result: Result<SearchBookResponse, Error>) in
+        searchWorker.performSearchBooks(term: request.term) { [weak self] (result: Result<SearchBookResponse, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let response):
