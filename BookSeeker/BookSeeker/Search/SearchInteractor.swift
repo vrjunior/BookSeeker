@@ -1,5 +1,6 @@
 protocol SearchBusinessLogic {
     func searchBook(request: SearchModels.SearchBook.Request)
+    func fetchHistory(request: SearchModels.FetchHistory.Request)
 }
 
 protocol SearchDataStore {
@@ -9,6 +10,7 @@ protocol SearchDataStore {
 final class SearchInteractor {
     private let presenter: SearchPresentationLogic
     private let network: NetworkProtocol
+    private let historyWorker: SearchHistoryWorkerProtocol
     
     // MARK: - DataStore properties
     
@@ -16,9 +18,11 @@ final class SearchInteractor {
     
     init(
         presenter: SearchPresentationLogic,
+        historyWorker: SearchHistoryWorkerProtocol,
         network: NetworkProtocol = Network.shared
     ) {
         self.presenter = presenter
+        self.historyWorker = historyWorker
         self.network = network
     }
 }
@@ -31,6 +35,9 @@ extension SearchInteractor: SearchDataStore {}
 
 extension SearchInteractor: SearchBusinessLogic {
     func searchBook(request: SearchModels.SearchBook.Request) {
+        
+        historyWorker.save(term: request.term)
+        
         let request = BookSearchRequest(term: request.term)
         network.requestCodable(request, dateDecodingStrategy: .iso8601) { [weak self] (result: Result<SearchBookResponse, Error>) in
             guard let self = self else { return }
@@ -41,10 +48,15 @@ extension SearchInteractor: SearchBusinessLogic {
                     SearchModels.Book(name: $0.name, thumbArtworkUrl: $0.thumbArtworkUrl)
                 }
             
-                self.presenter.presentSarchBookSucceed(response: .init(books: booksToPresent))
+                self.presenter.presentSearchBookSucceed(response: .init(books: booksToPresent))
             case .failure(let error):
                 self.presenter.presentSearchBookFailed(response: .init(error: error))
             }
         }
+    }
+    
+    func fetchHistory(request: SearchModels.FetchHistory.Request) {
+        let terms = historyWorker.fetchHistory()
+        presenter.presentSearchHistory(response: .init(terms: terms))
     }
 }

@@ -3,6 +3,7 @@ import UIKit
 protocol SearchDisplayLogic: AnyObject {
     func displaySearchBookSucceed(viewModel: SearchModels.SearchBook.Success.ViewModel)
     func displaySearchBookFailed(viewModel: SearchModels.SearchBook.Failure.ViewModel)
+    func displaySearchHistory(viewModel: SearchModels.FetchHistory.ViewModel)
 }
 
 final class SearchViewController: UIViewController {
@@ -31,6 +32,8 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Busca"
         setupSearchBar()
+        
+        interactor.fetchHistory(request: .init())
     }
     
     @available(*, unavailable)
@@ -46,6 +49,14 @@ final class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
+    
+    private func handleSearchInput(_ text: String?) {
+        guard let term = text, !term.isEmpty else {
+            return
+        }
+        customView.startLoading()
+        interactor.searchBook(request: .init(term: term))
+    }
 }
 
 // MARK: - SearchDisplayLogic
@@ -53,11 +64,15 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: SearchDisplayLogic {
     func displaySearchBookSucceed(viewModel: SearchModels.SearchBook.Success.ViewModel) {
         customView.stopLoading()
-        customView.booksToDisplay = viewModel.books
+        customView.display(content: .searchResults(books: viewModel.books))
     }
     
     func displaySearchBookFailed(viewModel: SearchModels.SearchBook.Failure.ViewModel) {
         
+    }
+    
+    func displaySearchHistory(viewModel: SearchModels.FetchHistory.ViewModel) {
+        customView.display(content: .searchHistory(terms: viewModel.terms))
     }
 }
 
@@ -72,14 +87,15 @@ extension SearchViewController: SearchViewDelegate {
 // MARK: - UISearchBarDelegate
 
 extension SearchViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        handleSearchInput(searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        interactor.fetchHistory(request: .init())
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let term = searchBar.text, !term.isEmpty else {
-            return
-        }
-        customView.startLoading()
-        interactor.searchBook(request: .init(term: term))
+        handleSearchInput(searchBar.text)
     }
 }

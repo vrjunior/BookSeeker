@@ -30,7 +30,7 @@ struct SearchModels {
         }
     }
     
-    enum SearchHistory {
+    enum FetchHistory {
         struct Request {}
         
         struct Response {

@@ -2,11 +2,11 @@ import Cartography
 import UIKit
 
 protocol SearchInputLogic where Self: UIView {
-    var booksToDisplay: [SearchModels.Book] { get set }
     var delegate: SearchViewDelegate? { get set }
     
     func startLoading()
     func stopLoading()
+    func display(content: SearchView.DisplayContent)
 }
 
 protocol SearchViewDelegate: AnyObject {
@@ -16,6 +16,11 @@ protocol SearchViewDelegate: AnyObject {
 final class SearchView: UIView {
     
     // MARK: - Views
+    
+    enum DisplayContent {
+        case searchResults(books: [SearchModels.Book])
+        case searchHistory(terms: [String])
+    }
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -39,11 +44,7 @@ final class SearchView: UIView {
     
     weak var delegate: SearchViewDelegate?
     
-    var booksToDisplay: [SearchModels.Book] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var displayContent: SearchView.DisplayContent = .searchHistory(terms: [])
     
     // MARK: - Initializer
     
@@ -77,6 +78,11 @@ extension SearchView: SearchInputLogic {
         loadingIndicator.stopAnimating()
         loadingIndicator.removeFromSuperview()
     }
+    
+    func display(content: SearchView.DisplayContent) {
+        displayContent = content
+        tableView.reloadData()
+    }
 }
 
 // MARK: - CodeView
@@ -106,18 +112,40 @@ extension SearchView: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension SearchView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return booksToDisplay.count
+        switch displayContent {
+        case let .searchHistory(terms):
+            return terms.count
+        case let .searchResults(books):
+            return books.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch displayContent {
+        case let .searchHistory(terms):
+            let term = terms[indexPath.row]
+            return cellForSearchHistory(with: term, tableView: tableView, indexPath: indexPath)
+        case let .searchResults(books):
+            let book = books[indexPath.row]
+            return cellForSearchResult(with: book, tableView: tableView, indexPath: indexPath)
+        }
+        
+    }
+    
+    private func cellForSearchHistory(with term: String, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+       return UITableViewCell()
+    }
+    
+    private func cellForSearchResult(with book: SearchModels.Book, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BookTableViewCell.self), for: indexPath)
         guard let bookCell = cell as? BookTableViewCell else {
             return cell
         }
         
-        bookCell.configure(withDisplay: booksToDisplay[indexPath.row])
+        bookCell.configure(withDisplay: book)
         
         return bookCell
+    
     }
 }
 

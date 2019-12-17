@@ -29,6 +29,9 @@
 		F792740223A6BAEA003CF2AE /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F792740123A6BAEA003CF2AE /* Displayable.swift */; };
 		F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A223A31F50005CF1B6 /* Margin.swift */; };
 		F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */; };
+		F7F8097523A8566A00E174A8 /* SearchHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097423A8566A00E174A8 /* SearchHistoryWorker.swift */; };
+		F7F8097B23A8592400E174A8 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097A23A8592400E174A8 /* UserDefaultsDataStore.swift */; };
+		F7F8097D23A85A8B00E174A8 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097C23A85A8B00E174A8 /* UserDefaultsProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		F792740123A6BAEA003CF2AE /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		F797A1A223A31F50005CF1B6 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		F7F8097423A8566A00E174A8 /* SearchHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryWorker.swift; sourceTree = "<group>"; };
+		F7F8097A23A8592400E174A8 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
+		F7F8097C23A85A8B00E174A8 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,7 @@
 		F73EA24523A1D7300094FE42 /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				F7F8097623A856B500E174A8 /* Persistency */,
 				F783F5DE23A596B5009E3D1E /* Network */,
 				F797A1A123A31F42005CF1B6 /* UI */,
 				F74B9DD523A315BE00023FB9 /* Protocols */,
@@ -132,6 +139,7 @@
 				F74B9DD823A317C000023FB9 /* SearchInteractor.swift */,
 				F74B9DDA23A3180E00023FB9 /* SearchConfigurator.swift */,
 				F783F5DC23A596AB009E3D1E /* BookSearch.swift */,
+				F7F8097423A8566A00E174A8 /* SearchHistoryWorker.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -190,6 +198,15 @@
 				F797A1A423A3216F005CF1B6 /* CustomNavigationController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		F7F8097623A856B500E174A8 /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				F7F8097A23A8592400E174A8 /* UserDefaultsDataStore.swift */,
+				F7F8097C23A85A8B00E174A8 /* UserDefaultsProvider.swift */,
+			);
+			path = Persistency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,12 +323,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F8097D23A85A8B00E174A8 /* UserDefaultsProvider.swift in Sources */,
+				F7F8097B23A8592400E174A8 /* UserDefaultsDataStore.swift in Sources */,
 				F79273F323A5988F003CF2AE /* Network.swift in Sources */,
 				F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */,
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,
 				F79273FB23A5A504003CF2AE /* SearchBookResponse.swift in Sources */,
 				F792740023A6B8FF003CF2AE /* BookTableViewCell.swift in Sources */,
 				F783F5E023A596C5009E3D1E /* NetworkRequest.swift in Sources */,
+				F7F8097523A8566A00E174A8 /* SearchHistoryWorker.swift in Sources */,
 				F74B9DD323A312B400023FB9 /* SearchModels.swift in Sources */,
 				F797A1A323A31F50005CF1B6 /* Margin.swift in Sources */,
 				F74B9DD123A312B400023FB9 /* SearchViewController.swift in Sources */,

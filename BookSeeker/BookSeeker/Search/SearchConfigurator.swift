@@ -7,7 +7,8 @@ protocol SearchConfiguratorProtocol {
 final class SearchConfigurator: SearchConfiguratorProtocol {
     func createScene() -> SearchDisplayLogic & UIViewController {
         let presenter = SearchPresenter()
-        let interactor = SearchInteractor(presenter: presenter)
+        let historyWorker = SearchHistoryWorker()
+        let interactor = SearchInteractor(presenter: presenter, historyWorker: historyWorker)
         let view = SearchView()
         let viewController = SearchViewController(customView: view, interactor: interactor)
         presenter.display = viewController
