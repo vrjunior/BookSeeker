@@ -32,6 +32,9 @@
 		F7F8097523A8566A00E174A8 /* SearchHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097423A8566A00E174A8 /* SearchHistoryWorker.swift */; };
 		F7F8097B23A8592400E174A8 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097A23A8592400E174A8 /* UserDefaultsDataStore.swift */; };
 		F7F8097D23A85A8B00E174A8 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8097C23A85A8B00E174A8 /* UserDefaultsProvider.swift */; };
+		F7F8098023A85EB600E174A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7F8097F23A85EB600E174A8 /* Localizable.strings */; };
+		F7F8098523A860A400E174A8 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8098323A860A400E174A8 /* assets-images.swift */; };
+		F7F8098623A860A400E174A8 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8098423A860A400E174A8 /* strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		F7F8097423A8566A00E174A8 /* SearchHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryWorker.swift; sourceTree = "<group>"; };
 		F7F8097A23A8592400E174A8 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		F7F8097C23A85A8B00E174A8 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		F7F8097F23A85EB600E174A8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F7F8098323A860A400E174A8 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
+		F7F8098423A860A400E174A8 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		FBF07D7A15466057AF6B75F9 /* Pods-BookSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeeker.release.xcconfig"; path = "Target Support Files/Pods-BookSeeker/Pods-BookSeeker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,15 +122,15 @@
 		F73EA24523A1D7300094FE42 /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				F7F8097E23A85E8F00E174A8 /* Utils */,
 				F7F8097623A856B500E174A8 /* Persistency */,
 				F783F5DE23A596B5009E3D1E /* Network */,
 				F797A1A123A31F42005CF1B6 /* UI */,
 				F74B9DD523A315BE00023FB9 /* Protocols */,
 				F74B9DCB23A3129700023FB9 /* Search */,
-				F73EA24623A1D7300094FE42 /* AppDelegate.swift */,
 				F73EA24F23A1D7310094FE42 /* Assets.xcassets */,
-				F73EA25123A1D7310094FE42 /* LaunchScreen.storyboard */,
 				F73EA25423A1D7310094FE42 /* Info.plist */,
+				F73EA25123A1D7310094FE42 /* LaunchScreen.storyboard */,
 			);
 			path = BookSeeker;
 			sourceTree = "<group>";
@@ -209,6 +215,25 @@
 			path = Persistency;
 			sourceTree = "<group>";
 		};
+		F7F8097E23A85E8F00E174A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F7F8098223A8602E00E174A8 /* Generated */,
+				F73EA24623A1D7300094FE42 /* AppDelegate.swift */,
+				F7F8097F23A85EB600E174A8 /* Localizable.strings */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F7F8098223A8602E00E174A8 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				F7F8098323A860A400E174A8 /* assets-images.swift */,
+				F7F8098423A860A400E174A8 /* strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F73EA25723A1D7310094FE42 /* Build configuration list for PBXNativeTarget "BookSeeker" */;
 			buildPhases = (
+				F7F8098123A8601500E174A8 /* SwiftGen */,
 				711684FD8B1CDDCEDE3E7508 /* [CP] Check Pods Manifest.lock */,
 				F73EA23F23A1D7300094FE42 /* Sources */,
 				F73EA24023A1D7300094FE42 /* Frameworks */,
@@ -270,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F73EA25323A1D7310094FE42 /* LaunchScreen.storyboard in Resources */,
+				F7F8098023A85EB600E174A8 /* Localizable.strings in Resources */,
 				F73EA25023A1D7310094FE42 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +343,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookSeeker/Pods-BookSeeker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F7F8098123A8601500E174A8 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -325,6 +370,7 @@
 			files = (
 				F7F8097D23A85A8B00E174A8 /* UserDefaultsProvider.swift in Sources */,
 				F7F8097B23A8592400E174A8 /* UserDefaultsDataStore.swift in Sources */,
+				F7F8098623A860A400E174A8 /* strings.swift in Sources */,
 				F79273F323A5988F003CF2AE /* Network.swift in Sources */,
 				F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */,
 				F74B9DDB23A3180E00023FB9 /* SearchConfigurator.swift in Sources */,
@@ -337,6 +383,7 @@
 				F74B9DD123A312B400023FB9 /* SearchViewController.swift in Sources */,
 				F74B9DD023A312B400023FB9 /* SearchView.swift in Sources */,
 				F74B9DD923A317C000023FB9 /* SearchInteractor.swift in Sources */,
+				F7F8098523A860A400E174A8 /* assets-images.swift in Sources */,
 				F797A1A523A3216F005CF1B6 /* CustomNavigationController.swift in Sources */,
 				F74B9DD223A312B400023FB9 /* SearchPresenter.swift in Sources */,
 				F73EA24723A1D7300094FE42 /* AppDelegate.swift in Sources */,

@@ -14,6 +14,7 @@ final class SearchViewController: UIViewController {
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = Localization.SearchViewController.SearchBar.placeholder
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
