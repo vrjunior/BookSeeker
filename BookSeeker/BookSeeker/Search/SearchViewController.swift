@@ -34,7 +34,7 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Busca"
+        navigationItem.title = Localization.SearchViewController.NavigationItem.title
         setupSearchBar()
         
         interactor.fetchHistory(request: .init())
@@ -72,7 +72,7 @@ extension SearchViewController: SearchDisplayLogic {
     }
     
     func displaySearchBookFailed(viewModel: SearchModels.SearchBook.Failure.ViewModel) {
-        
+        print(viewModel.errorMessage)
     }
     
     func displaySearchHistory(viewModel: SearchModels.FetchHistory.ViewModel) {

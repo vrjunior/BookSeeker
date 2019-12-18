@@ -20,6 +20,10 @@ internal enum Localization {
   }
 
   internal enum SearchViewController {
+    internal enum NavigationItem {
+      /// Busca
+      internal static let title = Localization.tr("Localizable", "SearchViewController.NavigationItem.Title")
+    }
     internal enum SearchBar {
       /// Busque por livros
       internal static let placeholder = Localization.tr("Localizable", "SearchViewController.SearchBar.Placeholder")

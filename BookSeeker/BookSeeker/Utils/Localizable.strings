@@ -1,2 +1,3 @@
 "SearchViewController.SearchBar.Placeholder" = "Busque por livros";
 "GenericError.LocalizedMessage.Text" = "Algo deu errado.";
+"SearchViewController.NavigationItem.Title" = "Busca";
