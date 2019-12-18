@@ -27,6 +27,13 @@
 		F758161E23A9A17D006D1ECA /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758161D23A9A17D006D1ECA /* SearchRouter.swift */; };
 		F758162123A9A98C006D1ECA /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162023A9A98C006D1ECA /* SearchPresenterTests.swift */; };
 		F758162323A9A99F006D1ECA /* SearchDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162223A9A99F006D1ECA /* SearchDisplayLogicSpy.swift */; };
+		F758162523A9ACCA006D1ECA /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162423A9ACCA006D1ECA /* SearchViewControllerTests.swift */; };
+		F758162723A9AD07006D1ECA /* SearchRoutingLogicDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162623A9AD07006D1ECA /* SearchRoutingLogicDummy.swift */; };
+		F758162923A9AD36006D1ECA /* SearchRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162823A9AD36006D1ECA /* SearchRoutingLogicSpy.swift */; };
+		F758162B23A9ADA6006D1ECA /* SearchInputLogicDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162A23A9ADA6006D1ECA /* SearchInputLogicDummy.swift */; };
+		F758162D23A9ADDD006D1ECA /* SearchInputLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162C23A9ADDD006D1ECA /* SearchInputLogicSpy.swift */; };
+		F758162F23A9AE49006D1ECA /* SearchBusinessLogicDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758162E23A9AE49006D1ECA /* SearchBusinessLogicDummy.swift */; };
+		F758163123A9AE6D006D1ECA /* SearchBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758163023A9AE6D006D1ECA /* SearchBusinessLogicSpy.swift */; };
 		F783F5E023A596C5009E3D1E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783F5DF23A596C5009E3D1E /* NetworkRequest.swift */; };
 		F79273F323A5988F003CF2AE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F223A5988F003CF2AE /* Network.swift */; };
 		F79273F523A5A20E003CF2AE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79273F423A5A20E003CF2AE /* NetworkError.swift */; };
@@ -89,6 +96,13 @@
 		F758161D23A9A17D006D1ECA /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		F758162023A9A98C006D1ECA /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
 		F758162223A9A99F006D1ECA /* SearchDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		F758162423A9ACCA006D1ECA /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		F758162623A9AD07006D1ECA /* SearchRoutingLogicDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutingLogicDummy.swift; sourceTree = "<group>"; };
+		F758162823A9AD36006D1ECA /* SearchRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		F758162A23A9ADA6006D1ECA /* SearchInputLogicDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputLogicDummy.swift; sourceTree = "<group>"; };
+		F758162C23A9ADDD006D1ECA /* SearchInputLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputLogicSpy.swift; sourceTree = "<group>"; };
+		F758162E23A9AE49006D1ECA /* SearchBusinessLogicDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusinessLogicDummy.swift; sourceTree = "<group>"; };
+		F758163023A9AE6D006D1ECA /* SearchBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusinessLogicSpy.swift; sourceTree = "<group>"; };
 		F783F5DF23A596C5009E3D1E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		F79273F223A5988F003CF2AE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F79273F423A5A20E003CF2AE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -330,6 +344,7 @@
 			children = (
 				F7F8099323A8714A00E174A8 /* SearchInteractorTests.swift */,
 				F758162023A9A98C006D1ECA /* SearchPresenterTests.swift */,
+				F758162423A9ACCA006D1ECA /* SearchViewControllerTests.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -350,6 +365,9 @@
 				F7F809A523A8746300E174A8 /* NetworkProtocolDummy.swift */,
 				F7F809A723A874AF00E174A8 /* SearchWorkerProtocolDummy.swift */,
 				F7F809AB23A8751D00E174A8 /* SearchHistoryWorkerProtocolDummy.swift */,
+				F758162623A9AD07006D1ECA /* SearchRoutingLogicDummy.swift */,
+				F758162A23A9ADA6006D1ECA /* SearchInputLogicDummy.swift */,
+				F758162E23A9AE49006D1ECA /* SearchBusinessLogicDummy.swift */,
 			);
 			path = Dummies;
 			sourceTree = "<group>";
@@ -361,6 +379,9 @@
 				F7F809A923A874DC00E174A8 /* SearchWorkerProtocolSpy.swift */,
 				F7F809AD23A8754000E174A8 /* SearchHistoryWorkerProtocolSpy.swift */,
 				F758162223A9A99F006D1ECA /* SearchDisplayLogicSpy.swift */,
+				F758162823A9AD36006D1ECA /* SearchRoutingLogicSpy.swift */,
+				F758162C23A9ADDD006D1ECA /* SearchInputLogicSpy.swift */,
+				F758163023A9AE6D006D1ECA /* SearchBusinessLogicSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -569,15 +590,22 @@
 			files = (
 				F7F809AA23A874DC00E174A8 /* SearchWorkerProtocolSpy.swift in Sources */,
 				F70E3F6723A877C7008982FD /* SearchWorkerProtocolStub.swift in Sources */,
+				F758162523A9ACCA006D1ECA /* SearchViewControllerTests.swift in Sources */,
 				F758162323A9A99F006D1ECA /* SearchDisplayLogicSpy.swift in Sources */,
+				F758162D23A9ADDD006D1ECA /* SearchInputLogicSpy.swift in Sources */,
 				F7F809A223A873A700E174A8 /* SearchPresentationLogicSpy.swift in Sources */,
 				F7F809A823A874AF00E174A8 /* SearchWorkerProtocolDummy.swift in Sources */,
 				F7F809A623A8746300E174A8 /* NetworkProtocolDummy.swift in Sources */,
 				F7F8099423A8714A00E174A8 /* SearchInteractorTests.swift in Sources */,
+				F758163123A9AE6D006D1ECA /* SearchBusinessLogicSpy.swift in Sources */,
 				F758162123A9A98C006D1ECA /* SearchPresenterTests.swift in Sources */,
 				F7F809AC23A8751D00E174A8 /* SearchHistoryWorkerProtocolDummy.swift in Sources */,
 				F7F809A423A8743C00E174A8 /* SearchPresentationLogicDummy.swift in Sources */,
 				F7F809AE23A8754000E174A8 /* SearchHistoryWorkerProtocolSpy.swift in Sources */,
+				F758162F23A9AE49006D1ECA /* SearchBusinessLogicDummy.swift in Sources */,
+				F758162B23A9ADA6006D1ECA /* SearchInputLogicDummy.swift in Sources */,
+				F758162923A9AD36006D1ECA /* SearchRoutingLogicSpy.swift in Sources */,
+				F758162723A9AD07006D1ECA /* SearchRoutingLogicDummy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
