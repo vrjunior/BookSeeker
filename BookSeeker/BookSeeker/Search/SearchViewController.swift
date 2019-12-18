@@ -10,6 +10,7 @@ final class SearchViewController: UIViewController {
     
     private let customView: SearchInputLogic
     private let interactor: SearchBusinessLogic
+    private let router: SearchRoutingLogic
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -21,10 +22,12 @@ final class SearchViewController: UIViewController {
     
     init(
         customView: SearchInputLogic,
-        interactor: SearchBusinessLogic
+        interactor: SearchBusinessLogic,
+        router: SearchRoutingLogic
     ) {
         self.customView = customView
         self.interactor = interactor
+        self.router = router
         super.init(nibName: nil, bundle: nil)
         customView.delegate = self
     }
@@ -80,7 +83,8 @@ extension SearchViewController: SearchDisplayLogic {
 // MARK: - SearchViewDelegate
 
 extension SearchViewController: SearchViewDelegate {
-    func didSelectBook(atIndex: Int) {
+    func didSelectBook(atIndex index: Int) {
+        router.routeToBookDetails(with: index)
     }
     
     func didSelectHistoryTerm(term: String) {

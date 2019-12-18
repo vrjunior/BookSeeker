@@ -10,7 +10,7 @@ protocol SearchInputLogic where Self: UIView {
 }
 
 protocol SearchViewDelegate: AnyObject {
-    func didSelectBook(atIndex: Int)
+    func didSelectBook(atIndex index: Int)
     func didSelectHistoryTerm(term: String)
 }
 

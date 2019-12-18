@@ -15,7 +15,9 @@ final class SearchConfigurator: SearchConfiguratorProtocol {
             searchWorker: searchWorker
         )
         let view = SearchView()
-        let viewController = SearchViewController(customView: view, interactor: interactor)
+        let router = SearchRouter(dataStore: interactor)
+        let viewController = SearchViewController(customView: view, interactor: interactor, router: router)
+        router.viewController = viewController
         presenter.display = viewController
         
         return viewController
