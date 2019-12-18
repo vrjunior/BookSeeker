@@ -36,7 +36,15 @@ final class SearchInteractorTests: XCTestCase {
     }
     
     func test_searchBook_performSearchSucceed_shouldCallPresentSearchBookSucceed() {
-        let book = Book(thumbArtworkUrl: "", artworkUrl: "apple", name: "ios", author: "apple", releaseDate: Date(), genres: [])
+        let book = Book(
+            thumbArtworkUrl: "",
+            artworkUrl: "apple",
+            name: "ios",
+            author: "apple",
+            releaseDate: Date(),
+            genres: [],
+            descriptionHtmlText: ""
+        )
         let expectedBooks = [SearchModels.Book(name: book.name, thumbArtworkUrl: book.thumbArtworkUrl)]
         let response = SearchBookResponse(books: [book])
         searchWorkerStub.resultToBeReturned = .success(response)
