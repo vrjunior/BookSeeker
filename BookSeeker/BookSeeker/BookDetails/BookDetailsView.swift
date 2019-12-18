@@ -102,7 +102,7 @@ extension BookDetailsView: CodeView {
             image.leading == content.leading
             image.trailing == content.trailing
             image.top == content.top
-            image.height == 200
+            image.height == 100
         }
         
         constrain(nameLabel, artworkImageView, contentView) { name, image, content in
