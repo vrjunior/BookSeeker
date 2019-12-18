@@ -13,7 +13,6 @@ final class BookDetailsView: UIView {
     private let artworkImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .lightGray
         return imageView
     }()
     
@@ -21,13 +20,23 @@ final class BookDetailsView: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .darkGray
+        label.numberOfLines = 0
         return label
     }()
     
     private let authorLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.font = .systemFont(ofSize: 16, weight: .medium)
         label.textColor = .gray
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     
@@ -40,6 +49,19 @@ final class BookDetailsView: UIView {
     required init?(coder: NSCoder) {
         return nil
     }
+    
+    private func getDescriptionAttributedString(from description: String) -> NSAttributedString? {
+        guard let data = description.data(using: .unicode, allowLossyConversion: true) else {
+            return nil
+        }
+        let attributed = try? NSAttributedString(
+            data: data,
+            options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil
+        )
+        
+        return attributed
+    }
 }
 
 // MARK: - BookDetailsInputLogic
@@ -50,6 +72,7 @@ extension BookDetailsView: BookDetailsInputLogic {
         artworkImageView.kf.setImage(with: imageURL)
         nameLabel.text = book.name
         authorLabel.text = book.author
+        descriptionLabel.attributedText = getDescriptionAttributedString(from: book.descriptionHtmlText)
     }
 }
 
@@ -62,6 +85,7 @@ extension BookDetailsView: CodeView {
         contentView.addSubview(artworkImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(authorLabel)
+        contentView.addSubview(descriptionLabel)
     }
     
     func setupConstraints() {
@@ -78,7 +102,7 @@ extension BookDetailsView: CodeView {
             image.leading == content.leading
             image.trailing == content.trailing
             image.top == content.top
-            image.width == 300
+            image.height == 200
         }
         
         constrain(nameLabel, artworkImageView, contentView) { name, image, content in
@@ -87,11 +111,17 @@ extension BookDetailsView: CodeView {
             name.trailing == image.trailing - Margin.normal
         }
         
-        constrain(authorLabel, nameLabel, contentView) { author, name, content in
+        constrain(authorLabel, nameLabel) { author, name in
             author.leading == name.leading
             author.top == name.bottom + Margin.small
             author.trailing == name.trailing
-            author.bottom == content.bottom - Margin.normal
+        }
+        
+        constrain(descriptionLabel, authorLabel, contentView) { description, author, content in
+            description.top == author.bottom + Margin.big
+            description.leading == author.leading
+            description.trailing == author.trailing
+            description.bottom == content.bottom - Margin.normal
         }
     }
     

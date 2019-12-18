@@ -7,6 +7,7 @@ struct Book {
     let author: String
     let releaseDate: Date
     let genres: [String]
+    let descriptionHtmlText: String
 }
 
 // MARK: - Decodable
@@ -19,5 +20,6 @@ extension Book: Decodable {
         case author = "artistName"
         case releaseDate
         case genres
+        case descriptionHtmlText = "description"
     }
 }
